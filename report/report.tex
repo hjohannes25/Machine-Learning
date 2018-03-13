@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+
+
+% Use wide margins, but not quite so wide as fullpage.sty
+\marginparwidth 0.5in 
+\oddsidemargin 0.25in 
+\evensidemargin 0.25in 
+\marginparsep 0.25in
+\topmargin 0.25in 
+\textwidth 6in \textheight 8 in
+% That's about enough definitions
+
+% multirow allows you to combine rows in columns
+\usepackage{multirow}
+% tabularx allows manual tweaking of column width
+\usepackage{tabularx}
+% longtable does better format for tables that span pages
+\usepackage{longtable}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+        language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green}
+        %,procnamekeys={def,class}
+}
+
+\usepackage[english]{babel}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}	
+\usepackage{url}
+
+
+
+
+%%% Begin document
+\begin{document}
+
+\title{SML Assignment 1: Directed Edge Prediction in a Twitter Social Network}
+\author{Laurence Davies, Steven Xu, Herman Johannes}
+\date{Tuesday 1st September 2015}
+\maketitle
+
+\input{intro}
+\input{features}
+\input{samplingbias}
+\input{results}
+
+\end{document}
+

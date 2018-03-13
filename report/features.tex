@@ -1,0 +1,20 @@
+\section{Learning Method}
+In feature-based link prediction, selecting a suitable feature set is crucial. The features must illustrate adjacency between vertices. In fact, many research works on link prediction extracting features from graph topology. The similarity of two vertices is evaluated based on the node neighborhoods and the ensembles of paths between two nodes. The most straightforward advantage of these features are that they are general and applicable for graphs from any domain, hence domain knowledge is not required. On the other hand, computational cost for these features is increasing in a huge social networks toplogy. Below we explain topological features that we used in our research.
+
+\subsection{Common Neighbors}
+For two nodes, x and y, the size of their common neighbors is defined as $|\Gamma(x)\cap\Gamma(y)|$ with $\Gamma(x)$ is a set of vertex \textit{x} neighbors and $\Gamma(y)$ is a set of vertex \textit{y} neighbors. In other words, if vertex \textit{x} has connection to vertex \textit{z} as well as vertex \textit{y} has connection to vertex \textit{z}, that means there is a chance that vertex \textit{x} will be connected to vertex \textit{y}. As number of common neighbors is escalating, the probability that there will be a connection between vertices \textit{x} and \textit{y} increases.
+
+\subsection{Adamic/Adar}
+For link prediction where the common neighbors are considered as features. We used:
+		\begin{equation}
+		adamic/adar(x,y) = \sum_{z \in\Gamma(x)\cap\Gamma(y)} \frac{1}{\log|\Gamma(z)|}
+		\end{equation}
+$\textit{z}$ is a vertex z node degree. Adamic/Adar weighs more heavily nodes with smaller degree as $\Gamma(z)$ is reduced by logarithmic operation. Adamic/Adar works better than Common Neighbors and Jaccard Coefficient which is not used in this research.
+
+\subsection{Katz}
+This metric is a variant of shortest path distance proposed by Leo Katz. It sums all the paths that exist between a pair of vertices x and y. To reduce the value of exceptionally longer paths, a factor of β is used to exponentially damp l, which is the path length. Katz produces more promising results than the shortest path since Katz is based on the ensemble of all paths between the vertices x and y. Equation to compute Katz value:
+katz(x,y) = equation
+where |path| is the set of all paths in length of l from vertex x to vertex y. The parameter β(≤ 1 ) used to adjust this feature. However, this feature has cubic complexity which could be considered as computationally expensive disadvantage.
+
+%\lstinputlisting{features.py}
+

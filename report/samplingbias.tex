@@ -1,0 +1,15 @@
+\section{Sampling Method}
+\subsection{Naive Sampling Method}
+
+\subsection{Sample Selection Bias}
+After several runs on Kaggle where the AUD was significantly lower than that estimated by a test sample extracted from the training data using the above sampling method, it became apparent that there was some sampling selection bias which was skewing the success rate of the predictor.
+
+An analysis of the node degree and common neighbours features extracted on the test-public.txt data and samples from the training data using the naive method described above revealed that although the distributions appeared to be close, two particular differences were noted: 
+
+\begin{enumerate}
+\item The distribution of the to-node in-degree in the naive sample contained far more low-degree nodes than those contained in the test-public set.
+\item The test-public set edges generally had more common subscriptions between the from and to nodes than the edges in the naive sample.
+\end{enumerate}
+
+%\lstinputlisting{features.py}
+
